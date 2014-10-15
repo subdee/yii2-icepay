@@ -1,0 +1,28 @@
+{
+    "name": "subdee/yii2-icepay",
+    "description": "An extension to the Icepay API for Yii2",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","icepay"],
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Kostas Thermos",
+            "email": "info@subdee.org"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "2.0.0",
+        "marlon-be/icepay-api": "~2.0.3"
+    },
+    "require-dev": {
+        "codeception/codeception": "2.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "subdee\\icepay\\": ""
+        },
+        "psr-0": {
+            "Icepay_": "src/"
+        }
+    }
+}
