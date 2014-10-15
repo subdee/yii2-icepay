@@ -65,15 +65,17 @@ class Icepay extends Component
      */
     public function init()
     {
-        list($language, $country) = explode('-', \Yii::$app->language);
-        if (!$this->language) {
-            $this->language = strtoupper($language);
-        }
-        if (!$this->country) {
-            $this->country = strtoupper($country);
-        }
-        if (!$this->currency) {
-            $this->currency = strtoupper(\Yii::$app->formatter->currencyCode);
+        if (!$this->language || !$this->country || !$this->currency) {
+            list($language, $country) = explode('-', \Yii::$app->language);
+            if (!$this->language) {
+                $this->language = strtoupper($language);
+            }
+            if (!$this->country) {
+                $this->country = strtoupper($country);
+            }
+            if (!$this->currency) {
+                $this->currency = strtoupper(\Yii::$app->formatter->currencyCode);
+            }
         }
     }
 
