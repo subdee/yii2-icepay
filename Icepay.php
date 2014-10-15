@@ -115,7 +115,7 @@ class Icepay extends Component
         $methodName = '\Icepay_Paymentmethod_' . ucfirst(strtolower($method));
         $paymentMethod = new $methodName();
         $payment = new \Icepay_PaymentObject();
-        $payment->setPaymentMethod($paymentMethod)
+        $payment->setPaymentMethod($paymentMethod->getCode())
             ->setAmount($amount)
             ->setOrderID($orderID)
             ->setDescription($description)
