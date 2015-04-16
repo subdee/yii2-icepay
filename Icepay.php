@@ -161,4 +161,29 @@ class Icepay extends Component
         return false;
     }
 
+    /**
+     * Handle the success or error result
+     * @return bool|\Icepay_Result
+     */
+    public function handleResult()
+    {
+        try {
+            $result = new \Icepay_Result();
+            $result->setMerchantID($this->merchantID)
+                ->setSecretCode($this->secretCode);
+
+            if (!$result->validate()) {
+                return false;
+            }
+
+            if ($result->getStatus() == \Icepay_StatusCode::SUCCESS) {
+                return $result;
+            }
+        } catch (\Exception $e) {
+            \Yii::error($e->getMessage());
+        }
+
+        return false;
+    }
+
 }
